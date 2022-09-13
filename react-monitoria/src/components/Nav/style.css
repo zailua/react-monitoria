@@ -1,0 +1,33 @@
+nav {
+  display:inline-block; 
+  margin:0
+
+}
+
+nav:after {
+
+  display:block;
+  content: '';
+  border-bottom: 3px solid #ffb7c5;
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+ 
+}
+
+nav:hover::after {
+   transform: scaleX(1); 
+ 
+}
+
+.menu {
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  
+}
+
+.menu li {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+}
