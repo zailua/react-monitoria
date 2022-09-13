@@ -31,3 +31,17 @@ nav:hover::after {
   display: inline-block;
   text-align: center;
 }
+
+
+a {
+  font-size: 22px;
+  color: #777;
+  text-decoration: none;
+  transition: all 0.45s;
+}
+
+
+a:hover  {
+  color: #ff5f7e;
+  transition: 0.2s;
+}

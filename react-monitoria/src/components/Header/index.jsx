@@ -1,11 +1,11 @@
-import React from "react"
-import { useState } from "react"
-import Nav from "../Nav"
+import React from 'react'
+import Nav from '../Nav'
+import './style.css'
 
 export default function Header() {
-  return (
-    <header>
-      <Nav />
-    </header>
-  )
+	return (
+		<header>
+			<Nav />
+		</header>
+	)
 }

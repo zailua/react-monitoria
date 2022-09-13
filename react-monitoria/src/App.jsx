@@ -1,11 +1,11 @@
 import './App.css'
-import Header from './components/Header'
+import Home from './pages/home'
+import Contatos from './pages/contatos'
 
 function App() {
 	return (
 		<div className="App">
-			<Header />
-			<h1>Fala ai Jonathan</h1>
+			<Contatos />
 		</div>
 	)
 }
