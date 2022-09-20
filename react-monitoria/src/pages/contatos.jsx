@@ -46,6 +46,32 @@ export default function contatos() {
 		},
 	]
 
+	//const array = [ 1, 2, 3, 4, 5, 6 ];
+
+
+	let index = 0;
+	while (index < array.length) {
+		console.log('USANDO WHILE -> ', array[index])
+		index++
+	}
+
+	for (let i = 0; i < array.length; i++) {
+		console.log('USANDO FOR -> ', array[i])
+	}
+
+	function funcaoNormal(elemento) {
+		return elemento*2
+	}
+
+	const funcaoFlexa = (elemento) => {
+		return elemento*2
+	}
+
+	const funcaoFlexa2 = (elemento) => elemento*2
+	
+
+	array.forEach((numero) => console.log(numero*2))
+
 
 	return (
 		<div>
@@ -61,20 +87,6 @@ export default function contatos() {
 							<div class="screen-body-item left">
 								<div class="app-title">
 									<span>Teste - Entre em Contato</span>
-									{/* <br/>
-									<h5>Demo map</h5>
-									<ul>
-								 		{array.map(e => 
-											<li>Recode Pro - Turma {e}</li>
-										)}
-									</ul>
-									<br/>
-									<h5>Demo filter</h5>
-									<ul>
-								 		{array.filter(e => e > 3).map(e => 
-											<li>Recode Pro - Turma {e}</li>
-										)}
-									</ul> */}
 								</div>
 							</div>
 							<div class="screen-body-item">
