@@ -6,13 +6,14 @@ export default function contatos() {
 
 	const cpf = '463.312.678-99';
 	const telefone = '+55 (11) 9 7641-2211';
-	const array = [ 1, 2, 3, 4, 5, 6 ];
+	const array = [ 10.99, 99.90, 105.5, 4.99, 5.20, 6.0 ];
 	const cliente = {
 		nome: 'José',
 		sobrenome: 'Silva',
 		nascimento: new Date().toISOString(),
 		idade: 32
 	}
+
 	const clientes = [
 		{
 			nome: 'Maria',
@@ -69,9 +70,11 @@ export default function contatos() {
 
 	const funcaoFlexa2 = (elemento) => elemento*2
 	
+	//const array = [ 1, 2, 3, 4, 5, 6 ];
+	const arrayComDesconto = array.map((preco) => preco - (preco * 0.15))
+	// retorno esperado =  [ 3, 6, 9, 12, 15, 18 ]
 
-	array.forEach((numero) => console.log(numero*2))
-
+	console.log(arrayComDesconto)
 
 	return (
 		<div>
@@ -87,6 +90,26 @@ export default function contatos() {
 							<div class="screen-body-item left">
 								<div class="app-title">
 									<span>Teste - Entre em Contato</span>
+									<table style={{fontSize: '1rem'}} border="2px">
+										<thead>
+											<tr>
+												<th>Nome</th>
+												<th>Sobrenome</th>
+												<th>Nascimento</th>
+												<th>Idade</th>
+											</tr>
+										</thead>
+										<tbody>
+											{clientes.map(cliente => 
+												<tr>
+													<td>{cliente.nome}</td>
+													<td>{cliente.sobrenome}</td>
+													<td>{cliente.nascimento}</td>
+													<td>{cliente.idade}</td>
+												</tr>	
+											)}
+										</tbody>
+									</table>
 								</div>
 							</div>
 							<div class="screen-body-item">
