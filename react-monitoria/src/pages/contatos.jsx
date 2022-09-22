@@ -47,7 +47,7 @@ export default function contatos() {
 		},
 	]
 
-	//const array = [ 1, 2, 3, 4, 5, 6 ];
+	//const array = [ 10.99, 99.90, 105.5, 4.99, 5.20, 6.0 ];
 
 
 	let index = 0;
@@ -69,10 +69,11 @@ export default function contatos() {
 	}
 
 	const funcaoFlexa2 = (elemento) => elemento*2
+
+	const funcaoFlexa3 = elemento => elemento*2
 	
-	//const array = [ 1, 2, 3, 4, 5, 6 ];
+	//const array = [ 10.99, 99.90, 105.5, 4.99, 5.20, 6.0 ];
 	const arrayComDesconto = array.map((preco) => preco - (preco * 0.15))
-	// retorno esperado =  [ 3, 6, 9, 12, 15, 18 ]
 
 	console.log(arrayComDesconto)
 
