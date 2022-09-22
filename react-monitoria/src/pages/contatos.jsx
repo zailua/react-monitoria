@@ -9,28 +9,43 @@ export default function contatos() {
 
 	const isNumber = (value) => !isNaN(value)
 
-	console.log('ANTES DO SPLIT --> ', cpf)
 
-	const cpfVetorSplit = cpf.split('')
-	console.log('ANTES DO FILTER --> ', cpfVetorSplit)
-
-	const cpfVetorSomenteNumeros = cpfVetorSplit.filter((caractere) => isNumber(caractere))
-	console.log('DEPOIS DO FILTER --> ', cpfVetorSomenteNumeros)
-
-	let cpfSomenteNumeros = '';
-
-	cpfVetorSomenteNumeros.forEach(numero => {
-		cpfSomenteNumeros += numero;
-	})
-
-	console.log('DEPOIS DO FOREACH --> ', cpfSomenteNumeros)
+	const extrairNumeros = (valor) => {
+		console.log('ANTES DO SPLIT --> ', valor)
+		const valorVetorSplit = valor.split('')
+		console.log('ANTES DO FILTER --> ', valorVetorSplit)
+		const valorVetorSomenteNumeros = valorVetorSplit.filter((caractere) => isNumber(caractere) && caractere != ' ' || caractere == '+')
+		console.log('DEPOIS DO FILTER --> ', valorVetorSomenteNumeros)
+		let valorSomenteNumeros = '';
+		valorVetorSomenteNumeros.forEach(numero => {
+			valorSomenteNumeros += numero;
+		})
+		console.log('DEPOIS DO FOREACH --> ', valorSomenteNumeros)
+		return valorSomenteNumeros
+	}
 
 	const telefone = '+55 (11) 9 7641-2211';
 	// '+5511976412211'
 
+
 	const nascimento = '19/03/2002'
 	// '2002-03-19 00:00:00'
 	// '2002-03-19'
+
+	const dataToISOString = (data) => {
+		const dataVetor = data.split('/')
+		let dataISO = ''
+
+		for (let index = dataVetor.length - 1; index >= 0; index--) {
+			dataISO += dataVetor[index] + '-';
+		}
+
+		dataISO = dataISO.substring(0, dataISO.length - 1)
+		return dataISO;
+	}
+
+	const nascimentoISO = dataToISOString(nascimento)
+	console.log(nascimentoISO)
 
 	const array = [ 10.99, 99.90, 105.5, 4.99, 5.20, 6.0 ];
 	const cliente = {
