@@ -45,7 +45,7 @@ export default function contatos() {
 	}
 
 	const nascimentoISO = dataToISOString(nascimento)
-	console.log(nascimentoISO)
+	// console.log(nascimentoISO)
 
 	const array = [ 10.99, 99.90, 105.5, 4.99, 5.20, 6.0 ];
 	const cliente = {
@@ -123,16 +123,16 @@ export default function contatos() {
 	return (
 		<div>
 			<Header />
-			<div class="background">
-				<div class="container">
-					<div class="screen">
-						<div class="screen-header">
-							<div class="screen-header-left"></div>
-							<div class="screen-header-right"></div>
+			<div className="background">
+				<div className="container">
+					<div className="screen">
+						<div className="screen-header">
+							<div className="screen-header-left"></div>
+							<div className="screen-header-right"></div>
 						</div>
-						<div class="screen-body">
-							<div class="screen-body-item left">
-								<div class="app-title">
+						<div className="screen-body">
+							<div className="screen-body-item left">
+								<div className="app-title">
 									<span>Lista de Clientes</span>
 									<table style={{fontSize: '1rem'}} border="2px">
 										<thead>
@@ -144,8 +144,8 @@ export default function contatos() {
 											</tr>
 										</thead>
 										<tbody>
-											{clientes.map(cliente => 
-												<tr>
+											{clientes.map((cliente, index) => 
+												<tr key={index}>
 													<td>{cliente.nome}</td>
 													<td>{cliente.sobrenome}</td>
 													<td>{cliente.nascimento}</td>
@@ -156,35 +156,34 @@ export default function contatos() {
 									</table>
 								</div>
 							</div>
-							<div class="screen-body-item">
-								<div class="app-form">
-									<div class="app-form-group">
+							<div className="screen-body-item">
+								<div className="app-form">
+									<div className="app-form-group">
 										<label style={{ color: 'white' }}>
 											Pesquisar Clientes
 											<input
-												class="app-form-control"
+												className="app-form-control"
 												placeholder="Informe o nome ou a idade do cliente"
 											/>
 										</label>
 									</div>
-									{/* <div class="app-form-group">
+									{/* <div className="app-form-group">
 										<input
-											class="app-form-control"
+											className="app-form-control"
 											placeholder="Insira seu nome..."
 										/>
 									</div>
-									<div class="app-form-group">
+									<div className="app-form-group">
 										<input
-											class="app-form-control"
+											className="app-form-control"
 											placeholder="(xx) x-xxxx-xxxx"
 										/>
 									</div>
-									<div class="app-form-group message">
-										<input class="app-form-control" placeholder="ᕦ(ò_óˇ)ᕤ" />
+									<div className="app-form-group message">
+										<input className="app-form-control" placeholder="ᕦ(ò_óˇ)ᕤ" />
 									</div> */}
-									<div class="app-form-group buttons">
-										<button class="app-form-button">Cancelar</button>
-										<button class="app-form-button">Enviar</button>
+									<div className="app-form-group buttons">
+										<button className="app-form-button">Incluir</button>
 									</div>
 								</div>
 							</div>
