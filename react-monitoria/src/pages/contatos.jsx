@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import './contatos.css'
 
@@ -88,6 +88,9 @@ export default function contatos() {
 		},
 	]
 
+
+
+
 	//const array = [ 10.99, 99.90, 105.5, 4.99, 5.20, 6.0 ];
 
 
@@ -118,8 +121,21 @@ export default function contatos() {
 	//console.log(arrayComDesconto)
 	//retorno esperado: [ 9.3415, 84.915, 89.675, 4.2415, 4.42, 5.1 ]
 
+	let clientesFiltrados = [];
+	
+	const filtrarNome = (pesquisa, clientes) => {
+		console.log("Pesquisa ----> ", pesquisa)
+		const clientesFiltrados = clientes.filter(
+			cliente => cliente.nome.includes(pesquisa) || cliente.sobrenome.includes(pesquisa)
+		)
+		console.log("Clientes Filtrados Na Função -----> ", clientesFiltrados)
+		return clientesFiltrados;  
+	}
 
 
+	
+	clientesFiltrados = filtrarNome('', clientes)
+	
 	return (
 		<div>
 			<Header />
@@ -144,7 +160,7 @@ export default function contatos() {
 											</tr>
 										</thead>
 										<tbody>
-											{clientes.map((cliente, index) => 
+											{clientesFiltrados.map((cliente, index) => 
 												<tr key={index}>
 													<td>{cliente.nome}</td>
 													<td>{cliente.sobrenome}</td>
@@ -162,8 +178,13 @@ export default function contatos() {
 										<label style={{ color: 'white' }}>
 											Pesquisar Clientes
 											<input
+												id="filtro"
+												onKeyUp={(evento) => {
+													clientesFiltrados = filtrarNome(evento.target.value, clientes)
+													console.log("DEPOIS DO FILTRO ------>", clientesFiltrados)
+												}}
 												className="app-form-control"
-												placeholder="Informe o nome ou a idade do cliente"
+												placeholder="Informe o nome ou o sobrenome do cliente"
 											/>
 										</label>
 									</div>
