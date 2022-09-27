@@ -133,7 +133,7 @@ export default function contatos() {
 						<div class="screen-body">
 							<div class="screen-body-item left">
 								<div class="app-title">
-									<span>Teste - Entre em Contato</span>
+									<span>Lista de Clientes</span>
 									<table style={{fontSize: '1rem'}} border="2px">
 										<thead>
 											<tr>
