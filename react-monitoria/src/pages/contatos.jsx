@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import './contatos.css'
 
@@ -121,7 +121,7 @@ export default function contatos() {
 	//console.log(arrayComDesconto)
 	//retorno esperado: [ 9.3415, 84.915, 89.675, 4.2415, 4.42, 5.1 ]
 
-	let clientesFiltrados = [];
+	const [ clientesFiltrados, setClientesFiltrados ] = useState(clientes);
 	
 	const filtrarNome = (pesquisa, clientes) => {
 		console.log("Pesquisa ----> ", pesquisa)
@@ -131,10 +131,6 @@ export default function contatos() {
 		console.log("Clientes Filtrados Na Função -----> ", clientesFiltrados)
 		return clientesFiltrados;  
 	}
-
-
-	
-	clientesFiltrados = filtrarNome('', clientes)
 	
 	return (
 		<div>
@@ -180,8 +176,7 @@ export default function contatos() {
 											<input
 												id="filtro"
 												onKeyUp={(evento) => {
-													clientesFiltrados = filtrarNome(evento.target.value, clientes)
-													console.log("DEPOIS DO FILTRO ------>", clientesFiltrados)
+													setClientesFiltrados(filtrarNome(evento.target.value, clientes))
 												}}
 												className="app-form-control"
 												placeholder="Informe o nome ou o sobrenome do cliente"
