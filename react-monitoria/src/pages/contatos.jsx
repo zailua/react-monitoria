@@ -159,13 +159,15 @@ export default function contatos() {
 							<div class="screen-body-item">
 								<div class="app-form">
 									<div class="app-form-group">
-										<input
-											class="app-form-control"
-											placeholder="¯\_(ツ)_/¯"
-											value=""
-										/>
+										<label style={{ color: 'white' }}>
+											Pesquisar Clientes
+											<input
+												class="app-form-control"
+												placeholder="Informe o nome ou a idade do cliente"
+											/>
+										</label>
 									</div>
-									<div class="app-form-group">
+									{/* <div class="app-form-group">
 										<input
 											class="app-form-control"
 											placeholder="Insira seu nome..."
@@ -179,7 +181,7 @@ export default function contatos() {
 									</div>
 									<div class="app-form-group message">
 										<input class="app-form-control" placeholder="ᕦ(ò_óˇ)ᕤ" />
-									</div>
+									</div> */}
 									<div class="app-form-group buttons">
 										<button class="app-form-button">Cancelar</button>
 										<button class="app-form-button">Enviar</button>
